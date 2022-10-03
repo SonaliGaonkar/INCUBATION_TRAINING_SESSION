@@ -6,6 +6,7 @@ int main()
 {
     char filename[30], ch, str[1000];
     int tot = 0, i = 0, tot_word = 0;
+    string temp;
     ifstream fp;
     cout << "Enter the Name of File: ";
     cin >> filename;
@@ -16,30 +17,13 @@ int main()
              << "File doesn't exist or Access denied!";
         return 0;
     }
-    while (fp >> noskipws >> ch)
+    while (fp >> temp)
     {
-        str[tot] = ch;
-        tot++;
+        if (temp == "\n" || temp == "\r" || temp == "\t")
+            continue;
+        tot_word++;
     }
     fp.close();
-    str[tot] = '\0';
-    while (str[i] != '\0')
-    {
-        if (str[i] == '\n')
-        {
-            if (str[i + 1] != '\0' && str[i + 1] != ' ')
-                tot_word++;
-            i++;
-        }
-        else if (str[i] != ' ')
-            i++;
-        else
-        {
-            if (str[i + 1] != '\0' && str[i + 1] != ' ')
-                tot_word++;
-            i++;
-        }
-    }
     cout << endl
          << "Total Words = " << tot_word;
     cout << endl;
