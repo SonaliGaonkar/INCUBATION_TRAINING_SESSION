@@ -22,17 +22,7 @@ int main()
         {
                 count++;
         }
-
         std::cout << "\nNo.of characters in a file = " << count << "\n";
-        while (file >> temp)
-        {
-                if (temp == "\n" || temp == "\r" || temp == "\t")
-                        continue;
-                tot_word++;
-        }
-        file.close();
-        cout << endl
-             << "Total Words = " << tot_word;
-        cout << endl;
+        
         return 0;
 }
