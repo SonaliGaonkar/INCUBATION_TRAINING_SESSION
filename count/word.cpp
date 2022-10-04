@@ -1,31 +1,34 @@
 #include <iostream>
 #include <fstream>
+#include <string.h>
 
 using namespace std;
 int main()
 {
-    char filename[30], ch, str[1000];
-    int tot = 0, i = 0, tot_word = 0;
+    char filename[30], ch[1000], word[20];
+    int wordcount = 0;
     string temp;
-    ifstream fp;
+    ifstream file;
     cout << "Enter the Name of File: ";
     cin >> filename;
-    fp.open(filename, ifstream::in);
-    if (!fp)
+    file.open(filename, ifstream::in);
+    if (!file)
     {
         cout << endl
              << "File doesn't exist or Access denied!";
         return 0;
     }
-    while (fp >> temp)
+
+    while (file >> temp)
     {
         if (temp == "\n" || temp == "\r" || temp == "\t")
             continue;
-        tot_word++;
+        wordcount++;
     }
-    fp.close();
     cout << endl
-         << "Total Words = " << tot_word;
+         << "Total Words = " << wordcount;
     cout << endl;
+
+    file.close();
     return 0;
 }

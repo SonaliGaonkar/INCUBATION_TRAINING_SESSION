@@ -1,12 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include <string.h>
+
 using namespace std;
 int main()
 {
         char ch, filename[50];
-        int i = 0, count = 0, tot_word = 0;
-        string temp;
+        int count = 0;
         ifstream file;
         cout << "Enter filename : ";
         cin >> filename;
@@ -23,6 +22,5 @@ int main()
                 count++;
         }
         std::cout << "\nNo.of characters in a file = " << count << "\n";
-        
         return 0;
 }

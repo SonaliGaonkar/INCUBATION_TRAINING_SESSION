@@ -19,7 +19,7 @@ int main()
             count++;
     }
 
-    cout << "Occurrence=" << count;
+    cout << "Occurrence = " << count;
     fin.close(); // closing file
 
     return 0;
