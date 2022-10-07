@@ -5,22 +5,22 @@ using namespace std;
 
 int main()
 {
-    ifstream fin("doc.txt"); // opening text file
+    ifstream file("doc.txt"); // opening text file
     int count = 0;
-    char ch[20], c[20];
+    char ch[20], word[20];
 
     cout << "Enter a word to count:";
-    gets(c);
+    gets(word);
 
-    while (fin)
+    while (file)
     {
-        fin >> ch;
-        if (strcmp(ch, c) == 0)
+        file >> ch;
+        if (strcmp(ch, word) == 0)
             count++;
     }
 
     cout << "Occurrence = " << count;
-    fin.close(); // closing file
+    file.close(); // closing file
 
     return 0;
 }

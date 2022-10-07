@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string.h>
 bool isValid(std::string str)
 {
 
@@ -10,8 +10,8 @@ bool isValid(std::string str)
     // Traverse the string for the rest of the characters
     for (int i = 1; i < str.length(); i++)
     {
-        if (((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9') 
-        || str[i] == '_'))
+        if (((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9')
+        || str[i] == '_') )
             return 0;
     }
 
