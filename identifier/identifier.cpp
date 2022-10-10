@@ -1,20 +1,40 @@
 #include <iostream>
 #include <string.h>
-bool isValid(std::string str)
+#include <ctype.h>
+
+int main()
 {
 
-    // check for valid identifier
-    if (((str[0] >= 'a' && str[0] <= 'z') || (str[0] >= 'A' && str[0] <= 'Z') || str[0] == '_'))
-        return 1;
+    int i = 0, flag = 0;
+    char a[10][10] = {"int", "float", "break", "long", "char", "for", "if", "switch", "else", "while"}, string[10];
 
-    // Traverse the string for the rest of the characters
-    for (int i = 1; i < str.length(); i++)
+    std::cout << "Enter a string : ";
+    std::cin >> string;
+
+    for (i = 0; i < 10; i++)
     {
-        if (((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9')
-        || str[i] == '_') )
-            return 0;
+        if ((strcmp(a[i], string) == 0))
+            flag = 1;
     }
 
-    // String is a invalid identifier
+    if (flag == 1)
+        std::cout << string << " is a valid keyword ";
+    else
+    {
+        flag = 0;
+
+        if ((string[0] == '_') || (isalpha(string[0]) != 0))
+        {
+            for (i = 1; string[i] != '\0'; i++)
+                if ((isalnum(string[i]) == 0) && (string[i] != '_'))
+                    flag = 1;
+        }
+        else
+            flag = 1;
+        if (flag == 0)
+            std::cout << string << " is a valid identifier ";
+        else
+            std::cout << string << " is neither a keyword nor an identifier " << string;
+    }
     return 0;
 }
