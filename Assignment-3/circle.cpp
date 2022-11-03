@@ -2,6 +2,10 @@
 // Select appropriate data structure and explain why you chose it.
 // Arrange the circles in increasing order of their area and print all the data of each circle.
 
+/* Reason to use array data structure : I have used array as a data structure
+data can be easily accessed using array
+I have also used class to store multiple data. 
+*/
 #include <iostream>
 using namespace std;
 
