@@ -3,79 +3,57 @@
 // Arrange the circles in increasing order of their area and print all the data of each circle.
 
 /* Reason to use array data structure : I have used array as a data structure
-data can be easily accessed using array
-I have also used class to store multiple data. 
+data can be easily accessed using array.
+I have stored data using structure type variable and a temp variable for temporary value storing.
 */
 #include <iostream>
 using namespace std;
-
-#define MAX 100
-
-class Circle
+struct Circle
 {
-public:
     int radius;
     int x;
     int y;
     float area;
-
-public:
-    void getDetails(void)
-    {
-        cout << "\nEnter radius: ";
-        cin >> radius;
-        cout << "Enter co-ordinate x: ";
-        cin >> x;
-        cout << "Enter co-ordinate y: ";
-        cin >> y;
-
-        area = 3.14 * radius * radius;
-    };
-    void putDetails(void)
-    {
-        cout << "\nradius:" << radius;
-        cout << "\nco-ordinate x:" << x;
-        cout << "\nco-ordinate y:" << y;
-        cout << "\nArea:" << area;
-    }
 };
 
 int main()
 {
-    class Circle s[MAX]; // array of objects creation
-    int n, i, j, temp;
-
-    cout << "Enter total number of circles: ";
+    struct Circle s[20], temp;
+    int i, j, n;
+    cout << "Enter total number of circles : ";
     cin >> n;
-
-    for (i = 0; i < n; i++)
+    for (i = 1; i <= n; i++)
     {
-        cout << "Enter data for circle " << i + 1;
-        s[i].getDetails();
-        std::cout << "\n";
+        cout << "\n\nEnter data for circle " << i << " : ";
+        cout << "\nEnter radius: ";
+        cin >> s[i].radius;
+        cout << "Enter co-ordinate x: ";
+        cin >> s[i].x;
+        cout << "Enter co-ordinate y: ";
+        cin >> s[i].y;
+
+        s[i].area = 3.14 * s[i].radius * s[i].radius;
     }
-
-    cout << endl;
-
-    for (i = 0; i < n; i++)
+    for (i = 1; i <= n - 1; i++)
     {
-        cout << "\nData of circle " << (i + 1);
-        for (i = 0; i < n; i++)
+        for (j = i + 1; j <= n; j++)
         {
-            for (j = i + 1; j < n; j++)
+            if (s[i].area > s[j].area)
             {
-                if (s[i].area > s[j].area)
-                {
-                    temp = s[i];
-                    s[i] = s[j];
-                    s[j] = temp;
-                }
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
             }
-            s[i].putDetails();
         }
-
-        std::cout << "\n";
     }
-
+    cout << "Sorted data of circle are:\n";
+    for (i = 1; i <= n; i++)
+    {
+        cout << "\n\nData for circle " << i << " : ";
+        cout << "\n\nradius:" << s[i].radius;
+        cout << "\nco-ordinate x:" << s[i].x;
+        cout << "\nco-ordinate y:" << s[i].y;
+        cout << "\nArea:" << s[i].area;
+    }
     return 0;
 }
