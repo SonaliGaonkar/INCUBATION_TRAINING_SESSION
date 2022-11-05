@@ -2,12 +2,12 @@
 //Please note N can have maximum 5 digits.
 
 #include <iostream>
-class reversing_of_digits
+class Reverse
 {
 public:
     int num, rem = 0;
     int reverse = 0;
-    reversing_of_digits()
+    Reverse()
     {
         std::cout << "Enter number to find reverse of it : ";
         std::cin >> num;
@@ -32,7 +32,7 @@ public:
 };
 int main()
 {
-    reversing_of_digits s;
+    Reverse s;
     s.getReverse();
     return 0;
 }

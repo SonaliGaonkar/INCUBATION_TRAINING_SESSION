@@ -1,12 +1,12 @@
 //Write a program to accept 5 digit integer N and calculate the sum of its first and fifth digit.
 #include <iostream>
 
-class sum_of_digits
+class Sum
 {
 public:
     int num, rem = 0;
     int sum = 0;
-    sum_of_digits()
+    Sum()
     {
         std::cout << "Enter five digit number : ";
         std::cin >> num;
@@ -31,7 +31,7 @@ public:
 };
 int main()
 {
-    sum_of_digits s;
+    Sum s;
     s.getSum();
     return 0;
 }

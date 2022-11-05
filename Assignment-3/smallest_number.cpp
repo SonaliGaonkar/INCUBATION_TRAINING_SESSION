@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-int kthSmallest(int arr[], int N, int K)
+int Smallest(int arr[], int N, int K)
 {
     sort(arr, arr + N);
     return arr[K - 1];
@@ -23,6 +23,6 @@ int main()
     std::cin >> K;
 
     cout << "K'th smallest element is "
-         << kthSmallest(arr, N, K);
+         << Smallest(arr, N, K);
     return 0;
 }

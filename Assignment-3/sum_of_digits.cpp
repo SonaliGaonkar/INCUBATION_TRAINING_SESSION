@@ -1,12 +1,12 @@
 //Write a program to accept an integer N and calculate the sum of its digits. Please note N can have maximum 5 digits.
 #include <iostream>
 
-class sum_of_digits
+class Sum
 {
 public:
     int num, rem = 0;
     int sum = 0;
-    sum_of_digits()
+    Sum()
     {
         std::cout << "Enter number to find sum of its digit : ";
         std::cin >> num;
@@ -31,7 +31,7 @@ public:
 };
 int main()
 {
-    sum_of_digits s;
+    Sum s;
     s.getSum();
     return 0;
 }

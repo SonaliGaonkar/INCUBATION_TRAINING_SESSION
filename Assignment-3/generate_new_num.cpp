@@ -1,12 +1,12 @@
 //Write a program to accept a 5 digit integer N and then generates a number M by adding 1 to each digit.
 
 #include <iostream>
-class new_num
+class Number
 {
 public:
     int num, rem;
     int sum = 0, reverse = 0;
-    new_num()
+    Number()
     {
         std::cout << "Enter number to generate new number : ";
         std::cin >> num;
@@ -42,7 +42,7 @@ public:
 };
 int main()
 {
-    new_num n;
+    Number n;
     n.generate_num();
     return 0;
 }
